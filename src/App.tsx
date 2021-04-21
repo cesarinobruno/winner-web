@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import ModalProfile from "./components/Modal";
+import Login from "./pages/Login/Login";
 
 function App() {
   return (
-    <ModalProfile/>
+    <Login/>
     );
 }
 export default App;

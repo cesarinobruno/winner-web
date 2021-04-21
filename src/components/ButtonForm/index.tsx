@@ -8,13 +8,13 @@ interface ButtonProps {
   className: string;
   nome: string;
   buttonWidth?:  string | number;
+  buttonPosition?: number;
 }
 
 const ButtonForm: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const { type, className, nome, buttonWidth } = props;
-  const witdh = '200px';
+  const { type, className, nome, buttonWidth, buttonPosition } = props;
   return (
-    <button type={type} className={className} style={{width: buttonWidth}}>
+    <button type={type} className={className} style={{width: buttonWidth, marginLeft: buttonPosition}}>
       {nome}
     </button>
   );
