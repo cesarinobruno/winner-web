@@ -4,10 +4,11 @@ import InputForm from "../../components/InputForm";
 import "./style.css";
 
 const Login: React.FC = () => {
+
   return (
     <div className="login-container">
       <div className="login-inputs">
-        <h4>Titulo da tela?</h4>
+        <h2 className="pt-5" style={{textAlign: 'center'}}>Bem vindo</h2>
         <div className="form">
           <InputForm
             typeInput="text"
@@ -15,7 +16,7 @@ const Login: React.FC = () => {
             required={false}
             description="Digite seu login"
             isLabel
-            label="Nome"
+            label="Login"
           />
           <InputForm
             typeInput="password"
@@ -34,6 +35,9 @@ const Login: React.FC = () => {
             buttonWidth={480}
             buttonPosition={10}
           />
+        </div>
+        <div className="mt-2" style={{textAlign:'center'}}>
+          <a href="/">Não tem cadastro? Inscreva-se já!</a>
         </div>
       </div>
     </div>
