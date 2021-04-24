@@ -9,12 +9,14 @@ interface ButtonProps {
   nome: string;
   buttonWidth?:  string | number;
   buttonPosition?: number;
+  onPressButton?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const ButtonForm: React.FC<ButtonProps> = (props: ButtonProps) => {
-  const { type, className, nome, buttonWidth, buttonPosition } = props;
+  const { type, className, nome, buttonWidth, buttonPosition, onPressButton } = props;
+ 
   return (
-    <button type={type} className={className} style={{width: buttonWidth, marginLeft: buttonPosition}}>
+    <button type={type} onClick={onPressButton} className={className} style={{width: buttonWidth, marginLeft: buttonPosition}}>
       {nome}
     </button>
   );
