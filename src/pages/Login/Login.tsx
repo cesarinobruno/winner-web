@@ -2,8 +2,11 @@ import React from "react";
 import ButtonForm from "../../components/ButtonForm";
 import InputForm from "../../components/InputForm";
 import "./style.css";
+import {useNavigate} from 'react-router-dom';
 
 const Login: React.FC = () => {
+
+  const navigate = useNavigate();
 
   return (
     <div className="login-container">
@@ -29,15 +32,16 @@ const Login: React.FC = () => {
         </div>
         <div className="buttonForm">
           <ButtonForm
-            type="submit"
+            type="button"
             className="btn btn-danger"
             nome="Entrar"
             buttonWidth={480}
             buttonPosition={10}
+            onPressButton={() => navigate('/home')}
           />
         </div>
         <div className="mt-2" style={{textAlign:'center'}}>
-          <a href="/">Não tem cadastro? Inscreva-se já!</a>
+          <a onClick={() => navigate('/novoUsuario')}>Não tem cadastro? Inscreva-se já!</a>
         </div>
       </div>
     </div>
