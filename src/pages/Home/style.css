@@ -1,0 +1,156 @@
+.container theme-showcase{
+    width: 1000px;
+}
+.conteiner {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 0.6px;
+    border-radius: 5px;
+    -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+    box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
+}
+
+.item {
+    border: 1.8px solid #000;
+    border-radius: 5px;
+    margin: 4px;
+    height: 63.2px;
+    width: 270px;
+    grid-gap: 1px;
+}
+
+.area {
+    grid-area: 1 / 1 / 12 / 3;
+    height: 787px;
+    width: 850px;
+}
+
+.btnCentro {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 493px;
+    left: 1045px;
+}
+
+.btnRocinha {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 561px;
+    left: 1030px;
+}
+
+.btnTijuca {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 535px;
+    left: 982px;
+}
+
+.btnLins {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 478px;
+    left: 952px;
+}
+
+.btnPenha {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 415px;
+    left: 956px;
+}
+
+.btnMadureira {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 425px;
+    left: 890px;
+}
+
+.btnBangu {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 459px;
+    left: 788px;
+}
+
+.btnBarra {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 559px;
+    left: 822px;
+}
+
+.btnCampoGrande {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 529px;
+    left: 665px;
+}
+
+.btnSantaCruz {
+    background-color: rgb(204, 220, 226);
+    border-radius: 5px;
+    position: absolute;
+    height: 27px;
+    width: 31px;
+    top: 505px;
+    left: 537px;
+}
+
+#centro {
+    width: 850px;
+    position: absolute;
+    margin-top: 130px;
+}
+
+#logo {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#texto {
+    text-align: center;
+    background-color: rgb(231, 244, 248);
+}
+
+
+.estrelas input[type=radio]{
+	display: none;
+}
+.estrelas label i.fa:before{
+	content: '\f005';
+	color: #FC0;
+}
+.estrelas  input[type=radio]:checked  ~ label i.fa:before{
+	color: #CCC;
+}
