@@ -1,10 +1,14 @@
-import React from "react";
+/* eslint-disable jsx-a11y/alt-text */
+import React, { useState } from "react";
 import "./style.css";
+import { Button, Modal } from "react-bootstrap";
 import Logo from '../../assets/logo.png';
 import Bitmap from '../../assets/bitmap.png';
 // import Plotly from 'plotly.js-dist';
 
 const Home: React.FC = () => {
+
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   const data = [
     {
@@ -16,30 +20,32 @@ const Home: React.FC = () => {
   // Plotly.newPlot('grafico', data);
 
   return (
-    <div className="container theme-showcase" role="main">
-      <div className="page-header"></div>
-      <div style={{width: '1000px'}}>
-        <ul className="nav nav-tabs" role="tablist">
+    <div className="container-root">
+      <div className="container theme-showcase" role="main">
+        {/* <div className="page-header"> */}
+        <ul className="nav nav-tabs ml-1" role="tablist">
           <li role="presentation" className="active"><a href="#disponiveis" aria-controls="disponiveis" role="tab"
             data-toggle="tab">
-            <span style={{ fontWeight: 'bold' }}>UPAs disponíveis</span></a></li>
+            <span className="tabsNavigation ml-1">UPAs disponíveis</span></a></li>
           <li role="presentation"><a href="#graficoatend" aria-controls="graficoatend" role="tab"
             data-toggle="tab">
-            <span style={{ fontWeight: 'bold' }}>Gráfico Atendimentos</span></a></li>
+            <span className="tabsNavigation">Gráfico Atendimentos</span></a></li>
           <li role="presentation"><a href="#endereco" aria-controls="endereco" role="tab" data-toggle="tab">
-            <span style={{ fontWeight: 'bold' }}>Endereços UPAs</span></a></li>
+            <span className="tabsNavigation">Endereços UPAs</span></a></li>
           <li role="presentation"><a href="#avaliacao" aria-controls="avaliacao" role="tab" data-toggle="tab">
-            <span style={{ fontWeight: 'bold' }}>Avaliações UPAs</span></a></li>
+            <span className="tabsNavigation">Avaliações UPAs</span></a></li>
         </ul>
+        {/* </div> */}
         <div className="tab-content">
           <div role="tabpanel" className="tab-pane active" id="disponiveis">
             <div className="conteiner">
               <div className="item area">
-               
-                <img src={Bitmap} id="centro" />
-                <img src={Logo} id="logo" />
 
-                <button className="btnCentro" type="submit" data-toggle="modal" data-target="#abrirCentro" />
+                <img src={Bitmap} className="centro" />
+
+                <img src={Logo} className="logo" />
+
+                <button className="btnCentro" type="submit" data-toggle="modal" onClick={() => setShowModal(true)} />
 
                 <button className="btnRocinha" type="submit" data-toggle="modal" data-target="#abrirRocinha" />
 
@@ -213,22 +219,94 @@ const Home: React.FC = () => {
           </div>
         </div>
 
-        <div className="modal fade" id="abrirCentro" tabIndex={-1} role="dialog">
+
+        <Modal show={showModal} scrollable={true}>
+          <Modal.Header>
+            <Modal.Title>UPA 24h - Centro</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <div className="modal-body">
+              <div className="container-fluid">
+                <div className="row">
+                  <div className="col-12">
+                    <span
+                      style={{ fontWeight: 'bold', textDecoration: 'underline' }}>EQUIPAMENTOS COM DEFEITO</span>
+                    <p>&nbsp;&nbsp;Eletrocardiograma<br />
+											&nbsp;&nbsp;Ecocardiografia<br />
+											&nbsp;&nbsp;Radiologia<br />
+											&nbsp;&nbsp;Imobilizações<br />
+											&nbsp;&nbsp;Mamografia<br />
+											&nbsp;&nbsp;Ultrassonografia
+                    </p>
+                  </div>
+                  <div className="col-12">
+                    <span
+                      style={{ fontWeight: 'bold', textDecoration: 'underline' }}>EQUIPAMENTOS
+											FUNCIONANDO:</span>
+                    <p>&nbsp;&nbsp;Eletrocardiograma<br />
+											&nbsp;&nbsp;Ecocardiografia<br />
+											&nbsp;&nbsp;Radiologia<br />
+											&nbsp;&nbsp;Imobilizações<br />
+											&nbsp;&nbsp;Mamografia<br />
+											&nbsp;&nbsp;Ultrassonografia</p>
+                  </div>
+                  <div className="col-12">
+                    <span
+                      style={{ fontWeight: 'bold', textDecoration: 'underline' }}>PROFISSIONAIS
+											AUSENTES:</span>
+                    <p>&nbsp;&nbsp;Cardiologista<br />
+											&nbsp;&nbsp;Clínica Médica<br />
+											&nbsp;&nbsp;Cirurgia Geral<br />
+											&nbsp;&nbsp;Neurocirurgia<br />
+											&nbsp;&nbsp;Oftalmologia<br />
+											&nbsp;&nbsp;Ortopedia</p>
+                  </div>
+                  <div className="col-12">
+                    <span
+                      style={{ fontWeight: 'bold', textDecoration: 'underline' }}>PROFISSIONAIS
+											PRESENTES:</span>
+                    <p>&nbsp;&nbsp;Cardiologista<br />
+											&nbsp;&nbsp;Clínica Médica<br />
+											&nbsp;&nbsp;Cirurgia Geral<br />
+											&nbsp;&nbsp;Neurocirurgia<br />
+											&nbsp;&nbsp;Oftalmologia<br />
+											&nbsp;&nbsp;Ortopedia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Modal.Body>
+
+          <Modal.Footer>
+            <Button onClick={() => setShowModal(false)}>
+              Fechar
+                  </Button>
+
+            <Button onClick={() => setShowModal(true)}>
+              Abrir
+                  </Button>
+          </Modal.Footer>
+
+        </Modal>
+
+
+        {/* <div className="modal" id="abrirCentro" tabIndex={-1} role="dialog">
+       
           <div className="modal-dialog" role="document">
             <div className="modal-content">
 
               <div className="modal-header">
                 <button type="button" className="close" data-dismiss="modal">
-                  {/* <span>&times;</span> */}
+                  <span>&times;</span>
                   <h4>
                     <span style={{ fontWeight: 'bold', color: "black" }}>
                       UPA 24h - Centro
                 </span>
                   </h4>
                 </button>
-              </div>
+              </div> */}
 
-              <div className="modal-body">
+        {/* <div className="modal-body">
                 <div className="container-fluid">
                   <div className="row">
                     <div className="col-12">
@@ -277,14 +355,27 @@ const Home: React.FC = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
-              <div className="modal-footer">
+        {/* <div className="modal-footer">
                 <button type="button" className="btn btn-danger" data-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         <div className="modal fade" id="abrirRocinha" tabIndex={-1} role="dialog">
           <div className="modal-dialog" role="document">
@@ -651,7 +742,7 @@ const Home: React.FC = () => {
         </div>
 
         {/* <!-- Modal UPA Barra da Tijuca--> */}
-        <div className="modal fade" id="abrirBarra" tabIndex={-1} role="dialog">
+        <div className="modal fade" id="abrirBarra" role="dialog">
           <div className="modal-dialog" role="document">
             <div className="modal-content">
 
@@ -938,16 +1029,15 @@ const Home: React.FC = () => {
                   </div>
                 </div>
               </div>
-
               <div className="modal-footer">
                 <button type="button" className="btn btn-danger" data-dismiss="modal">Fechar</button>
               </div>
             </div>
           </div>
           {/* <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> */}
-          {/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> */}
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
           {/* <!-- Include all compiled plugins (below), or include individual files as needed --> */}
-          {/* <script src="js/bootstrap.min.js"></script> */}
+          <script src="js/bootstrap.min.js"></script>
         </div>
       </div>
     </div>
