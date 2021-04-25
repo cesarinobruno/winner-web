@@ -2,16 +2,22 @@ import React from "react";
 import ButtonForm from "../../components/ButtonForm";
 import InputForm from "../../components/InputForm";
 import "./style.css";
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
+import { Button,} from "react-bootstrap";
 
 const Login: React.FC = () => {
-
   const navigate = useNavigate();
+
+  const redirectToHome = () => {
+    navigate('/novoUsuario')
+  }
 
   return (
     <div className="login-container">
       <div className="login-inputs">
-        <h2 className="pt-5" style={{textAlign: 'center'}}>Bem vindo</h2>
+        <h2 className="pt-5" style={{ textAlign: "center" }}>
+          Bem vindo
+        </h2>
         <div className="form">
           <InputForm
             typeInput="text"
@@ -37,11 +43,11 @@ const Login: React.FC = () => {
             nome="Entrar"
             buttonWidth={480}
             buttonPosition={10}
-            onPressButton={() => navigate('/home')}
+            onPressButton={redirectToHome}
           />
         </div>
-        <div className="mt-2" style={{textAlign:'center'}}>
-          <a onClick={() => navigate('/novoUsuario')}>Não tem cadastro? Inscreva-se já!</a>
+        <div style={{marginTop: 20, display: 'flex', justifyContent: 'flex-end', marginRight: 10}}>
+          <Button onClick={() => navigate('/novoUsuario')} size='lg' variant="outline-info">Inscreva-se</Button>
         </div>
       </div>
     </div>
