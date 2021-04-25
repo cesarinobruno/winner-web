@@ -14,7 +14,7 @@ interface ButtonProps {
 
 const ButtonForm: React.FC<ButtonProps> = (props: ButtonProps) => {
   const { type, className, nome, buttonWidth, buttonPosition, onPressButton } = props;
- 
+  
   return (
     <button type={type} onClick={onPressButton} className={className} style={{width: buttonWidth, marginLeft: buttonPosition}}>
       {nome}

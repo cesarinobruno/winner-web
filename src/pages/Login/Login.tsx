@@ -9,7 +9,7 @@ const Login: React.FC = () => {
   const navigate = useNavigate();
 
   const redirectToHome = () => {
-    navigate('/novoUsuario')
+    navigate('/home')
   }
 
   return (

@@ -1,10 +1,8 @@
-/* eslint-disable jsx-a11y/alt-text */
 import React, { useState } from "react";
 import "./style.css";
 import { Button, Modal } from "react-bootstrap";
 import Logo from '../../assets/logo.png';
 import Bitmap from '../../assets/bitmap.png';
-// import Plotly from 'plotly.js-dist';
 
 const Home: React.FC = () => {
 
@@ -194,7 +192,7 @@ const Home: React.FC = () => {
                 </h4>
                 <form>
                   <div className="estrelas">
-                    <input type="radio" id="vazio" name="estrela" value="" checked />
+                    <input type="radio" id="vazio" name="estrela" value="" />
 
                     <label><i className="fa"></i></label>
                     <input type="radio" id="estrela_um" name="estrela" value="1" />
