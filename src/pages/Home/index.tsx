@@ -17,7 +17,7 @@ const Home: React.FC = () => {
   };
 
   const OpenGeolocation = () => {
-    console.log('abrir localização');
+    console.log('abrir Geolocalização');
   }
 
   const data = [

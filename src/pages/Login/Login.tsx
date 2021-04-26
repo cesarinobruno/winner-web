@@ -47,7 +47,7 @@ const Login: React.FC = () => {
           />
         </div>
         <div style={{marginTop: 20, display: 'flex', justifyContent: 'flex-end', marginRight: 10}}>
-          <Button onClick={() => navigate('/novoUsuario')} size='lg' variant="outline-info">Inscreva-se</Button>
+          <Button onClick={() => navigate('/newUser')} size='lg' variant="outline-info">Inscreva-se</Button>
         </div>
       </div>
     </div>
