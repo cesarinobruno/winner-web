@@ -6,7 +6,7 @@ const ModalProfile: React.FC = () => {
     const [closeModal, setCloseModal] = useState<boolean>(true);
 
     useEffect(() => {
-        console.log(openModal);
+        console.log("openModal");
     }, [openModal]);
 
     return (
