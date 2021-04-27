@@ -1,14 +1,16 @@
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login/Login";
-import Novo from "../pages/NewUser/admin";
+import NovoAdm from "../pages/NewUser/admin";
+import NovoUser from '../pages/NewUser/user';
 
 function MainRoutes(): JSX.Element {
   return (
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
-        <Route path="/newUser" element={<Novo />} />
+        <Route path="/newUserAdmin" element={<NovoAdm />} />
+        <Route path="/newUser" element={<NovoUser />} />
       </Routes>
   );
 }

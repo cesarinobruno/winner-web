@@ -7,7 +7,7 @@ import "./style.css";
 const NewUser: React.FC = () => {
   return (
     <Fragment>
-      <h3 className="text-center mt-5">Cadastre-se - usuário - definir título</h3>
+      <h3 className="text-center mt-5">Cadastro Usuário</h3>
       <h3>
         <img src={logo} />
       </h3>
