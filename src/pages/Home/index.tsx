@@ -20,29 +20,29 @@ const Home: React.FC = () => {
     console.log('abrir Geolocalização');
   }
 
-  const data = [
-    {
-      x: [
-        "Centro",
-        "Rocinha",
-        "Lins",
-        "Penha",
-        "Tijuca",
-        "Madureira",
-        "Barra da Tijuca",
-        "Bangu",
-        "Campo Grande",
-        "Santa Cruz",
-      ],
-      y: [900, 1020, 890, 875, 695, 389, 835, 821, 978, 756],
-      type: "bar",
-    },
-  ];
+  //PARA ficar de cola
+  // const data = [
+  //   {
+  //     x: [
+  //       "Centro",
+  //       "Rocinha",
+  //       "Lins",
+  //       "Penha",
+  //       "Tijuca",
+  //       "Madureira",
+  //       "Barra da Tijuca",
+  //       "Bangu",
+  //       "Campo Grande",
+  //       "Santa Cruz",
+  //     ],
+  //     y: [900, 1020, 890, 875, 695, 389, 835, 821, 978, 756],
+  //     type: "bar",
+  //   },
+  // ];
   // Plotly.newPlot('grafico', data);
 
   return (
     <div className="container-root">
-      <div className="container theme-showcase" role="main">
         {/* <div className="page-header"> */}
         <ul className="nav nav-tabs ml-1" role="tablist">
           <li role="presentation" className="active">
@@ -91,9 +91,9 @@ const Home: React.FC = () => {
           <div role="tabpanel" className="tab-pane active" id="disponiveis">
             <div className="conteiner">
               <div className="item area">
-                <img src={Bitmap} className="centro" />
+                <img src={Bitmap} className="centro" alt="" />
 
-                <img src={Logo} className="logo" />
+                <img src={Logo} className="logo" alt=""/>
 
                 <button
                   className="btnCentro"
@@ -1641,13 +1641,13 @@ const Home: React.FC = () => {
               </div>
             </div>
           </div>
+          PARA O
           {/* <!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> */}
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+          {/* <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> */}
           {/* <!-- Include all compiled plugins (below), or include individual files as needed --> */}
-          <script src="js/bootstrap.min.js"></script>
+          {/* <script src="js/bootstrap.min.js"></script> */}
         </div>
       </div>
-    </div>
   );
 };
 

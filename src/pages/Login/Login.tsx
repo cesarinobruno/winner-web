@@ -1,27 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import ButtonForm from "../../components/ButtonForm";
 import InputForm from "../../components/InputForm";
 import "./style.css";
 import { useNavigate } from "react-router-dom";
-import { Button,} from "react-bootstrap";
-import Doctor from '../../assets/doctor.jpg';
-import Logo from '../../assets/logo.png';
+import { Button } from "react-bootstrap";
+import Doctor from "../../assets/doctor.jpg";
+import Logo from "../../assets/logo.png";
+import ModalProfile from "../../components/ModalProfile";
+import { EBADF } from "node:constants";
 
 const Login: React.FC = () => {
+  const [isModal, setIsModal] = useState<boolean>(false);
   const navigate = useNavigate();
 
   const redirectToHome = () => {
-    navigate('/home')
-  }
+    navigate("/home");
+  };
+
+  const navigateToModalProfile = (e: React.SyntheticEvent<EventTarget>) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setIsModal(true);
+  };
 
   return (
     <div className="login-container">
-      <img src={Doctor} alt="foto Doutor"/>
+      <img src={Doctor} alt="foto Doutor" />
       <div className="login-inputs">
         <h2 className="pt-5" style={{ textAlign: "center" }}>
           Bem vindo
         </h2>
-        <img src={Logo} alt="logo Winner" className="logo-img"/>
+        <img src={Logo} alt="logo Winner" className="logo-img" />
         <div className="form">
           <InputForm
             typeInput="text"
@@ -50,8 +59,16 @@ const Login: React.FC = () => {
             onPressButton={redirectToHome}
           />
         </div>
-        <div style={{marginTop: 20, display: 'flex', justifyContent: 'flex-end', marginRight: 10}}>
-          <Button onClick={() => navigate('/newUser')} size='lg' variant="outline-info" className="increva-se">Inscreva-se</Button>
+        <div className="containerButton">
+          <Button
+            onClick={navigateToModalProfile}
+            size="lg"
+            variant="outline-info"
+            className="increva-se"
+          >
+            Inscreva-se
+          </Button>
+          {isModal && <ModalProfile isModal />}
         </div>
       </div>
     </div>
