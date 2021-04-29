@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ButtonForm from "../../components/ButtonForm";
 import InputForm from "../../components/InputForm";
 import "./style.css";
@@ -17,10 +17,13 @@ const Login: React.FC = () => {
     navigate("/home");
   };
 
-  const navigateToModalProfile = (e: React.SyntheticEvent<EventTarget>) => {
-    e.preventDefault();
-    e.stopPropagation();
-    setIsModal(true);
+  const controlModalProfile = () => {
+    if(!isModal){
+      setIsModal(true);
+    }
+    else if(isModal){
+      setIsModal(false);
+    }
   };
 
   return (
@@ -61,14 +64,14 @@ const Login: React.FC = () => {
         </div>
         <div className="containerButton">
           <Button
-            onClick={navigateToModalProfile}
+            onClick={controlModalProfile}
             size="lg"
             variant="outline-info"
             className="increva-se"
           >
             Inscreva-se
           </Button>
-          {isModal && <ModalProfile isModal />}
+          {isModal && <ModalProfile isModal openControlModal={controlModalProfile} />}
         </div>
       </div>
     </div>

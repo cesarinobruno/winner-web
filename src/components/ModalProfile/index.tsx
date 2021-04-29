@@ -1,18 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router";
 interface propsModal {
   isModal: boolean;
+  openControlModal: Function;
 }
 
 const ModalProfile: React.FC<propsModal> = (props: propsModal) => {
-  const {isModal} = props;
-  const [controlOpenModal, setControlOpenModal] = useState<boolean>(true);
+  const {isModal, openControlModal} = props;
   const navigation = useNavigate();
 
   return (
     <>
-      <Modal show={isModal && controlOpenModal}>
+      <Modal show={isModal}>
         <Modal.Header>
           <Modal.Title>Como deseja se cadastrar</Modal.Title>
         </Modal.Header>
@@ -21,7 +21,7 @@ const ModalProfile: React.FC<propsModal> = (props: propsModal) => {
           Por favor, selecione o perfil que deseja se cadastrar!
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={() => setControlOpenModal(false)}>
+          <Button variant="secondary" onClick={() => openControlModal(false)}>
             Fechar
           </Button>
           <Button variant="primary" onClick={() => navigation('/newUser')}>Usuário</Button>
