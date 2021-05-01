@@ -22,6 +22,11 @@
   width: 500px;
 }
 
+.foto-doutor{
+  width: 100%;
+  height: 100%;
+}
+
 .form {
   width: 440px;
   padding-top: 60px;

@@ -2,15 +2,15 @@ import React, { Fragment } from "react";
 import logo from "../../../assets/logo.png";
 import ButtonForm from "../../../components/ButtonForm";
 import InputForm from "../../../components/InputForm";
-import "./style.css";
+import "../admin/style.css";
 
 const NewAdmin: React.FC = () => {
   return (
     <Fragment>
-      <div className="container">
+      <div className="container-admin">
         <h3 className="text-center mt-5">Cadastro administrador</h3>
         <img src={logo} alt="logotipo winner" className="logo-img"/>
-        <form>
+        <form className="form-admin">
           <div className="form-group w-75">
             <InputForm
               typeInput="text"

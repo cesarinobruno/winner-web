@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import ButtonForm from "../../components/ButtonForm";
 import InputForm from "../../components/InputForm";
-import "./style.css";
+import "../Login/style.css";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
 import Doctor from "../../assets/doctor.jpg";
 import Logo from "../../assets/logo.png";
 import ModalProfile from "../../components/ModalProfile";
-import { EBADF } from "node:constants";
+
 
 const Login: React.FC = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
@@ -28,7 +28,7 @@ const Login: React.FC = () => {
 
   return (
     <div className="login-container">
-      <img src={Doctor} alt="foto Doutor" />
+      <img src={Doctor} alt="foto Doutor" className="foto-doutor"/>
       <div className="login-inputs">
         <h2 className="pt-5" style={{ textAlign: "center" }}>
           Bem vindo

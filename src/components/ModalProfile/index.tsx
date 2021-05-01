@@ -1,6 +1,7 @@
 import React from "react";
 import { Button, Modal } from "react-bootstrap";
 import { useNavigate } from "react-router";
+import "../ModalProfile/style.css"
 interface propsModal {
   isModal: boolean;
   openControlModal: Function;

@@ -1,17 +1,18 @@
-.container{
+.container-admin{
     width: 100vw;
     height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: initial;
     align-items: center;
+    background-color: blue;
 }
 
 .logo-img{
     margin: 60px 0 ;
 }
 
-form{
+.form-admin{
     display: flex;
     width: 500px;
     flex-direction: column;
