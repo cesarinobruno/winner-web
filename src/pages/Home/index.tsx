@@ -3,6 +3,8 @@ import "./style.css";
 import { Button, Modal } from "react-bootstrap";
 import Logo from "../../assets/logo.png";
 import Bitmap from "../../assets/bitmap.png";
+import Maps from './Maps';
+
 
 const Home: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -576,7 +578,9 @@ const Home: React.FC = () => {
           <Modal.Footer>
             <Button onClick={() => activeModal(false)}>Fechar</Button>
 
+            
             <Button onClick={() => OpenGeolocation()}>Abrir geolocalização</Button>
+            
           </Modal.Footer>
         </Modal>
 
