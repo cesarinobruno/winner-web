@@ -4,7 +4,7 @@ import InputForm from "../../components/InputForm";
 import "../Login/style.css";
 import { useNavigate } from "react-router-dom";
 import { Button } from "react-bootstrap";
-import Doctor from "../../assets/doctor.jpg";
+import Doctor from "../../assets/doctor.png";
 import Logo from "../../assets/logo.png";
 import ModalProfile from "../../components/ModalProfile";
 

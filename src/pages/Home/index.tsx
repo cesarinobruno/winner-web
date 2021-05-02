@@ -4,6 +4,7 @@ import { Button, Modal } from "react-bootstrap";
 import Logo from "../../assets/logo.png";
 import Bitmap from "../../assets/bitmap.png";
 import Maps from './Maps';
+import ButtonMap from "../../components/ButtonMap";
 
 
 const Home: React.FC = () => {
@@ -97,11 +98,16 @@ const Home: React.FC = () => {
 
                 <img src={Logo} className="logo" alt=""/>
 
-                <button
-                  className="btnCentro"
-                  type="submit"
-                  data-toggle="modal"
-                  onClick={() => activeModal(true)}
+                <ButtonMap
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={457}
+                  leftButton={1125}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
                 />
 
                 <button
