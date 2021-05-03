@@ -98,7 +98,7 @@ const Home: React.FC = () => {
 
                 <img src={Logo} className="logo" alt=""/>
 
-                <ButtonMap
+                <ButtonMap  //btnCentro
                   backgroundColorButton="rgb(204, 220, 226)"
                   borderRadiusButton="5px"
                   positionButton="absolute"
@@ -110,69 +110,116 @@ const Home: React.FC = () => {
                   onClickButton={() => setShowModal(true)}
                 />
 
-                <button
-                  className="btnRocinha"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirRocinha"
+                <ButtonMap  //btnRocinha
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={528}
+                  leftButton={1114}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+                
+                <ButtonMap  //btnTijuca
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={500}
+                  leftButton={1062}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
                 />
 
-                <button
-                  className="btnTijuca"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirTijuca"
+                <ButtonMap  //btnLins
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={443}
+                  leftButton={1032}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+                
+                <ButtonMap  //btnPenha
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={377}
+                  leftButton={1033}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+                
+                <ButtonMap  //btnMadureira
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={387}
+                  leftButton={968}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+             
+                <ButtonMap  //btnBangu
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={422}
+                  leftButton={866}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
                 />
 
-                <button
-                  className="btnLins"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirLins"
-                />
+                <ButtonMap  //btnBarra
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={522}
+                  leftButton={899}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />            
+               
+                <ButtonMap  //btnCampoGrande
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={494}
+                  leftButton={741}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                /> 
 
-                <button
-                  className="btnPenha"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirPenha"
-                />
-
-                <button
-                  className="btnMadureira"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirMadureira"
-                />
-
-                <button
-                  className="btnBangu"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirBangu"
-                />
-
-                <button
-                  className="btnBarra"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirBarra"
-                />
-
-                <button
-                  className="btnCampoGrande"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirCampoGrande"
-                />
-
-                <button
-                  className="btnSantaCruz"
-                  type="submit"
-                  data-toggle="modal"
-                  data-target="#abrirSantaCruz"
-                />
+                <ButtonMap  //btnSantaCruz
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={467}
+                  leftButton={611}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                /> 
               </div>
+
+
 
               <div className="item" id="texto">
                 <h4>
@@ -586,6 +633,7 @@ const Home: React.FC = () => {
 
             
             <Button onClick={() => OpenGeolocation()}>Abrir geolocalização</Button>
+            
             
           </Modal.Footer>
         </Modal>

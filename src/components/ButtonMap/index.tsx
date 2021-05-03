@@ -3,7 +3,7 @@ import React from "react";
 type buttonType = "button" | "submit" | "reset" | undefined;
 
 interface PropsButtonMap {
-  nome?: string;
+  //nome?: string;
   backgroundColorButton: string | any;
   borderRadiusButton: number | any;
   positionButton: string | any;
@@ -11,8 +11,8 @@ interface PropsButtonMap {
   widthButton: number;
   topButton: number;
   leftButton:number;
-  typeButton?: buttonType;
-  onClickButton?: React.MouseEventHandler<HTMLButtonElement>;
+  typeButton: buttonType;  
+  onClickButton: React.MouseEventHandler<HTMLButtonElement>;
 }
 
 const ButtonMap: React.FC<PropsButtonMap> = (props: PropsButtonMap) => {
