@@ -7,10 +7,20 @@ interface InputProps {
   description: string;
   required: boolean;
   isLabel: boolean;
+  onChange?:  React.ChangeEventHandler<HTMLInputElement>;
 }
 
 const InputForm: React.FC<InputProps> = (props: InputProps) => {
-  const { typeInput, label, className, description, required, isLabel } = props;
+  const {
+    typeInput,
+    label,
+    className,
+    description,
+    required,
+    isLabel,
+    onChange
+  } = props;
+
   return (
     <>
       <label>{isLabel && label !== null ? label : ""}</label>
@@ -19,6 +29,7 @@ const InputForm: React.FC<InputProps> = (props: InputProps) => {
         className={className}
         required={required}
         placeholder={description}
+        onChange={onChange}
       />
     </>
   );

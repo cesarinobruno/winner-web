@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState } from "react";
 import ButtonForm from "../../components/ButtonForm";
 import InputForm from "../../components/InputForm";
 import "../Login/style.css";
@@ -7,10 +7,11 @@ import { Button } from "react-bootstrap";
 import Doctor from "../../assets/doctor.png";
 import Logo from "../../assets/logo.png";
 import ModalProfile from "../../components/ModalProfile";
-
+import api from "../../services/api";
 
 const Login: React.FC = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
+
   const navigate = useNavigate();
 
   const redirectToHome = () => {
@@ -18,17 +19,35 @@ const Login: React.FC = () => {
   };
 
   const controlModalProfile = () => {
-    if(!isModal){
+    if (!isModal) {
       setIsModal(true);
-    }
-    else if(isModal){
+    } else if (isModal) {
       setIsModal(false);
     }
   };
 
+  const handleOnChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("event", e.target.value);
+  };
+
+  const handleOnChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
+    console.log("event", e.target.value);
+  };
+
+  const teste = () => {
+    api
+      .get("httpbin.org/get")
+      .then((r) => {
+        console.log('resposta', r.data)
+      })
+      .catch((err) => {
+        console.log("error", err);
+      });
+  };
+
   return (
     <div className="login-container">
-      <img src={Doctor} alt="foto Doutor" className="foto-doutor"/>
+      <img src={Doctor} alt="foto Doutor" className="foto-doutor" />
       <div className="login-inputs">
         <h2 className="pt-5" style={{ textAlign: "center" }}>
           Bem vindo
@@ -42,6 +61,7 @@ const Login: React.FC = () => {
             description="Digite seu login"
             isLabel
             label="Login"
+            onChange={(e) => handleOnChangeLogin(e)}
           />
           <InputForm
             typeInput="password"
@@ -50,6 +70,7 @@ const Login: React.FC = () => {
             description="Digite sua senha"
             isLabel
             label="Senha"
+            onChange={(e) => handleOnChangePassword(e)}
           />
         </div>
         <div className="buttonForm">
@@ -71,7 +92,9 @@ const Login: React.FC = () => {
           >
             Inscreva-se
           </Button>
-          {isModal && <ModalProfile isModal openControlModal={controlModalProfile} />}
+          {isModal && (
+            <ModalProfile isModal openControlModal={controlModalProfile} />
+          )}
         </div>
       </div>
     </div>
