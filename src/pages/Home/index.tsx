@@ -5,22 +5,22 @@ import Logo from "../../assets/logo.png";
 import Bitmap from "../../assets/bitmap.png";
 import Maps from "./Maps";
 import ButtonMap from "../../components/ButtonMap";
-import InformationModalUpa from "../../components/InformationModal";
+import InformationModalUpa from "../../components/InformationModalUpa";
 
 const Home: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const activeModal = (show: boolean) => {
-    if (!showModal && show) {
-      setShowModal(true);
-    } else {
-      setShowModal(false);
-    }
-  };
+  // const activeModal = (show: boolean) => {
+  //   if (!showModal && show) {
+  //     setShowModal(true);
+  //   } else {
+  //     setShowModal(false);
+  //   }
+  // };
 
-  const OpenGeolocation = () => {
-    console.log("abrir Geolocalização");
-  };
+  // const OpenGeolocation = () => {
+  //   console.log("abrir Geolocalização");
+  // };
 
   //PARA ficar de cola
   // const data = [
