@@ -225,123 +225,6 @@ const Home: React.FC = () => {
                 </span>
               </h4>
             </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Centro:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  1.300
-                </span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Rocinha:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  1.150
-                </span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Lins:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>950</span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Penha:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  1.100
-                </span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Tijuca:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  1.200
-                </span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Madureira:
-                </span>
-              </h4>
-
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  1.300
-                </span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Barra da Tijuca:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>800</span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Bangu:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  1.500
-                </span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Campo Grande:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  1.400
-                </span>
-              </p>
-            </div>
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  Santa Cruz:
-                </span>
-              </h4>
-              <p>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  1.600
-                </span>
-              </p>
-            </div>
           </div>
         </div>
 
@@ -361,6 +244,12 @@ const Home: React.FC = () => {
             </div>
           </div>
         </div>
+
+
+{/*Adicionar informações de cada upa.
+//adicionar um array que vai renderizar essas informações
+*/}
+{/* O componente foi criado */}
 
         <div role="tabpanel" className="tab-pane" id="endereco">
           <div className="itemEnd">
