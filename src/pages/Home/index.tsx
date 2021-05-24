@@ -405,10 +405,11 @@ const Home: React.FC = () => {
         </div>
       </div>
 
-      <InformationModalUpa
+      {/* <InformationModalUpa
         upaName="UPA 24 Copacanaba"
+      
         // onClick={setShowModal(true)}
-      />
+      /> */}
   </div>
   );
 };
