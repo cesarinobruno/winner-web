@@ -19,13 +19,13 @@ const ModalProfile: React.FC<propsModal> = (props: propsModal) => {
         </Modal.Header>
 
         <Modal.Body>
-          Por favor, selecione o perfil que deseja se cadastrar!
+          Selecione o seu perfil de cadastro.
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={() => openControlModal(false)}>
             Fechar
           </Button>
-          <Button variant="primary" onClick={() => navigation('/newUser')}>Usuário</Button>
+          <Button variant="primary" onClick={() => navigation('/newUser')}>Paciente</Button>
           <Button variant="primary" onClick={() => navigation('/newUserAdmin')}>Administrador</Button>
         </Modal.Footer>
       </Modal>

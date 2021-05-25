@@ -1,0 +1,20 @@
+.item {
+    border: 1.8px solid #000;
+    border-radius: 5px;
+    margin: 4px;
+    height: 63.2px;
+    width: 270px;
+    grid-gap: 1px;
+    text-align: center;
+    background-color: rgb(231, 244, 248);
+}
+
+
+.titleDistrict{
+    font-weight: bold;
+}
+
+.attendanceDistrict{
+    font-weight: bold;
+
+}

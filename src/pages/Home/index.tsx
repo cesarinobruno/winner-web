@@ -3,9 +3,9 @@ import "./style.css";
 import { Button, Modal } from "react-bootstrap";
 import Logo from "../../assets/logo.png";
 import Bitmap from "../../assets/bitmap.png";
-import Maps from "./Maps";
 import ButtonMap from "../../components/ButtonMap";
-import InformationModalUpa from "../../components/InformationModalUpa";
+import DistrictUpa from "../../components/District";
+
 
 const Home: React.FC = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
@@ -45,185 +45,228 @@ const Home: React.FC = () => {
 
   return (
     <div className="container-root">
-      {/* <div className="page-header"> */}
-      <ul className="nav nav-tabs ml-1" role="tablist">
-        <li role="presentation" className="active">
-          <a
-            href="#disponiveis"
-            aria-controls="disponiveis"
-            role="tab"
-            data-toggle="tab"
-          >
-            <span className="tabsNavigation ml-1">UPAs disponíveis</span>
-          </a>
-        </li>
-        <li role="presentation">
-          <a
-            href="#graficoatend"
-            aria-controls="graficoatend"
-            role="tab"
-            data-toggle="tab"
-          >
-            <span className="tabsNavigation">Gráfico Atendimentos</span>
-          </a>
-        </li>
-        <li role="presentation">
-          <a
-            href="#endereco"
-            aria-controls="endereco"
-            role="tab"
-            data-toggle="tab"
-          >
-            <span className="tabsNavigation">Endereços UPAs</span>
-          </a>
-        </li>
-        <li role="presentation">
-          <a
-            href="#avaliacao"
-            aria-controls="avaliacao"
-            role="tab"
-            data-toggle="tab"
-          >
-            <span className="tabsNavigation">Avaliações UPAs</span>
-          </a>
-        </li>
-      </ul>
-      {/* </div> */}
-      <div className="tab-content">
-        <div role="tabpanel" className="tab-pane active" id="disponiveis">
-          <div className="conteiner">
-            <div className="item area">
-              <img src={Bitmap} className="centro" alt="" />
+        {/* <div className="page-header"> */}
+        <ul className="nav nav-tabs ml-1" role="tablist">
+          <li role="presentation" className="active">
+            <a
+              href="#disponiveis"
+              aria-controls="disponiveis"
+              role="tab"
+              data-toggle="tab"
+            >
+              <span className="tabsNavigation ml-1">UPAs disponíveis</span>
+            </a>
+          </li>
+          <li role="presentation">
+            <a
+              href="#graficoatend"
+              aria-controls="graficoatend"
+              role="tab"
+              data-toggle="tab"
+            >
+              <span className="tabsNavigation">Gráfico Atendimentos</span>
+            </a>
+          </li>
+          <li role="presentation">
+            <a
+              href="#endereco"
+              aria-controls="endereco"
+              role="tab"
+              data-toggle="tab"
+            >
+              <span className="tabsNavigation">Endereços UPAs</span>
+            </a>
+          </li>
+          <li role="presentation">
+            <a
+              href="#avaliacao"
+              aria-controls="avaliacao"
+              role="tab"
+              data-toggle="tab"
+            >
+              <span className="tabsNavigation">Avaliações UPAs</span>
+            </a>
+          </li>
+        </ul>
+        {/* </div> */}
+        <div className="tab-content">
+          <div role="tabpanel" className="tab-pane active" id="disponiveis">
+            <div className="conteiner">
+              <div className="area">
+                <img src={Bitmap} className="centro" alt="" />
 
-              <img src={Logo} className="logo" alt="" />
+                <img src={Logo} className="logo" alt=""/>
 
-              <ButtonMap //btnCentro
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={457}
-                leftButton={1125}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+                <ButtonMap  //btnCentro
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={457}
+                  leftButton={1125}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+
+                <ButtonMap  //btnRocinha
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={528}
+                  leftButton={1114}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+                
+                <ButtonMap  //btnTijuca
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={500}
+                  leftButton={1062}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+
+                <ButtonMap  //btnLins
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={443}
+                  leftButton={1032}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+                
+                <ButtonMap  //btnPenha
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={377}
+                  leftButton={1033}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+                
+                <ButtonMap  //btnMadureira
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={387}
+                  leftButton={968}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+             
+                <ButtonMap  //btnBangu
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={422}
+                  leftButton={866}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />
+
+                <ButtonMap  //btnBarra
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={522}
+                  leftButton={899}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                />            
+               
+                <ButtonMap  //btnCampoGrande
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={494}
+                  leftButton={741}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                /> 
+
+                <ButtonMap  //btnSantaCruz
+                  backgroundColorButton="rgb(204, 220, 226)"
+                  borderRadiusButton="5px"
+                  positionButton="absolute"
+                  heigthButton={27}
+                  widthButton={31}
+                  topButton={467}
+                  leftButton={611}
+                  typeButton="submit"
+                  onClickButton={() => setShowModal(true)}
+                /> 
+              </div>
+
+
+
+              <div className="item">
+                <h4>
+                  <span style={{ fontWeight: "bold", color: "black" }}>
+                    MÉDIA MENSAL DE ATENDIMENTOS:
+                  </span>
+                </h4>
+              </div>
+              <DistrictUpa
+                DistrictTitle = "Centro"
+                NumberOfAttendance = {1800}
               />
-
-              <ButtonMap //btnRocinha
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={528}
-                leftButton={1114}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Rocinha"
+                NumberOfAttendance = {1150}
               />
-
-              <ButtonMap //btnTijuca
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={500}
-                leftButton={1062}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Lins"
+                NumberOfAttendance = {950}
               />
-
-              <ButtonMap //btnLins
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={443}
-                leftButton={1032}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Penha"
+                NumberOfAttendance = {1100}
               />
-
-              <ButtonMap //btnPenha
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={377}
-                leftButton={1033}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Tijuca"
+                NumberOfAttendance = {1100}
               />
-
-              <ButtonMap //btnMadureira
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={387}
-                leftButton={968}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Madureira"
+                NumberOfAttendance = {1300}
               />
-
-              <ButtonMap //btnBangu
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={422}
-                leftButton={866}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Barra da Tijuca"
+                NumberOfAttendance = {800}
               />
-
-              <ButtonMap //btnBarra
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={522}
-                leftButton={899}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Bangu"
+                NumberOfAttendance = {1500}
               />
-
-              <ButtonMap //btnCampoGrande
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={494}
-                leftButton={741}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Campo Grande"
+                NumberOfAttendance = {1400}
               />
-
-              <ButtonMap //btnSantaCruz
-                backgroundColorButton="rgb(204, 220, 226)"
-                borderRadiusButton="5px"
-                positionButton="absolute"
-                heigthButton={27}
-                widthButton={31}
-                topButton={467}
-                leftButton={611}
-                typeButton="submit"
-                onClickButton={() => setShowModal(true)}
+              <DistrictUpa
+                DistrictTitle = "Santa Cruz"
+                NumberOfAttendance = {1600}
               />
-            </div>
-
-            <div className="item" id="texto">
-              <h4>
-                <span style={{ fontWeight: "bold", color: "black" }}>
-                  MÉDIA MENSAL DE ATENDIMENTOS:
-                </span>
-              </h4>
             </div>
           </div>
         </div>
@@ -404,7 +447,6 @@ const Home: React.FC = () => {
           </div>
         </div>
       </div>
-  </div>
   );
 };
 

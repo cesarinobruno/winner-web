@@ -30,19 +30,16 @@
     color: rgb(12, 78, 12);
   }
 
-.item {
-    border: 1.8px solid #000;
-    border-radius: 5px;
-    margin: 4px;
-    height: 63.2px;
-    width: 270px;
-    grid-gap: 1px;
-}
 
-.area {
+
+.area{
     grid-area: 1 / 1 / 12 / 3;
     height: 787px;
     width: 850px;
+    grid-gap: 1px;
+    margin: 7px;
+    border: 1.8px solid #000;
+    border-radius: 5px;
 }
 
 .centro {
@@ -56,12 +53,6 @@
     margin-top: 10px;
     margin-left: 10px;
 }
-
-#texto {
-    text-align: center;
-    background-color: rgb(231, 244, 248);
-}
-
 
 .estrelas input[type=radio]{
 	display: none;
