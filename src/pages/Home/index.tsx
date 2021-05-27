@@ -97,7 +97,7 @@ const Home: React.FC = () => {
 
                 <img src={Logo} className="logo" alt=""/>
 
-                <ButtonMap  //btnCentro
+                <ButtonMap  
                   backgroundColorButton="rgb(204, 220, 226)"
                   borderRadiusButton="5px"
                   positionButton="absolute"
