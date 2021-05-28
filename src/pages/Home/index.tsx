@@ -42,7 +42,12 @@ const Home: React.FC = () => {
   //   },
   // ];
   // Plotly.newPlot('grafico', data);
-
+  const districtUpas = [
+    {
+      title: "centro",
+      atendimentos: 2000,
+    },
+  ];
   return (
     <div className="container-root">
         {/* <div className="page-header"> */}
