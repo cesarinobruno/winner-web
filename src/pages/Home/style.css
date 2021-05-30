@@ -4,6 +4,24 @@
     margin-top: 50px;
 }
 
+.avalie{
+    margin-left: 550px; 
+    margin-top: 10px;
+    width: 750px;
+}
+
+.estrelas input[type=radio] {
+    display: none;
+  }
+  .estrelas label i.fa:before {
+    content:'\f005';
+    color: #FC0;
+    font-size: 2.5em
+  }
+  .estrelas input[type=radio]:checked ~ label i.fa:before {
+    color: #CCC;
+  }
+
 .conteiner {
     width: 1150px;
     display: grid;
