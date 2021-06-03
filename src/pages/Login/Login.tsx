@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, {useEffect, useState } from "react";
 import ButtonForm from "../../components/ButtonForm";
 import InputForm from "../../components/InputForm";
 import "../Login/style.css";
@@ -11,12 +11,9 @@ import api from "../../services/api";
 
 const Login: React.FC = () => {
   const [isModal, setIsModal] = useState<boolean>(false);
-
+  const [isLoginReady, setIsLoginReady] = useState<boolean>(false);
+  const [isPasswordReady, setIsPasswordReady] = useState<boolean>(false);
   const navigate = useNavigate();
-
-  const redirectToHome = () => {
-    navigate("/home");
-  };
 
   const controlModalProfile = () => {
     if (!isModal) {
@@ -25,13 +22,74 @@ const Login: React.FC = () => {
       setIsModal(false);
     }
   };
+  
+  
+  const redirectToHome = () => {
+    if(isLoginReady && isPasswordReady){
+      console.log("cheguei aqui")
+      navigate("/home");
+    }
+  };
+  
+/*
+  useEffect(() => {
+    if(isLoginReady && isPasswordReady){
+      console.log('cheguei aqui')
+    }
+  }, [isLoginReady, isPasswordReady])
+*/
 
   const handleOnChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("event", e.target.value);
+    e.preventDefault();
+    const login = e.target.value
+    console.log(login)
+
+    if(login.length === 0){
+        setIsLoginReady(false);
+    } 
+
+    for(let i = 0 ; i < login.length ; i++){
+        if(login && login[i].trim()){  
+            setIsLoginReady(true);
+        } 
+    }
   };
 
   const handleOnChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("event", e.target.value);
+    e.preventDefault();
+    const senha = e.target.value
+    let letrasMaiusculas = /[A-Z]/;
+    let letrasMinusculas = /[a-z]/; 
+    let numeros = /[0-9]/;
+    let caracteresEspeciais = /[!|@|#|$|%|^|&|*|(|)|-|_]/;
+
+    let auxMaiuscula = 0;
+    let auxMinuscula = 0;
+    let auxNumero = 0;
+    let auxEspecial = 0;
+
+    let i = 0;
+    
+    while(i < senha.length){
+        if(letrasMaiusculas.test(senha[i]))
+            auxMaiuscula++;
+
+        else if(letrasMinusculas.test(senha[i]))
+            auxMinuscula++;
+
+        else if(numeros.test(senha[i]))
+            auxNumero++;
+
+        else if(caracteresEspeciais.test(senha[i]))
+            auxEspecial++;
+        
+        console.log(auxMaiuscula, auxMinuscula, auxNumero, auxEspecial)
+         i++;
+    }
+
+    if (auxMaiuscula && auxMinuscula && auxNumero && auxEspecial){
+        setIsPasswordReady(true)
+    }
   };
 
   const teste = () => {
