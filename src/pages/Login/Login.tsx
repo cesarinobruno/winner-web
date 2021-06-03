@@ -29,25 +29,22 @@ const Login: React.FC = () => {
       navigate("/home");
     }
   };
-  
-  const handleOnChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    const login = e.target.value
 
-    if(login.length === 0){
-        setIsLoginReady(false);
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    let login = document.querySelector('.field-login') as HTMLFormElement
+    let senha = document.querySelector('.field-password') as HTMLFormElement
+
+    if(login.value.length === 0){
+      setIsLoginReady(false);
     } 
 
-    for(let i = 0 ; i < login.length ; i++){
-        if(login && login[i].trim()){  
-            setIsLoginReady(true);
+    for(let i = 0 ; i < login.value.length ; i++){
+        if(login.value && login.value[i].trim()){  
+          setIsLoginReady(true);
         } 
     }
-  };
 
-  const handleOnChangePassword = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    const senha = e.target.value
     let letrasMaiusculas = /[A-Z]/;
     let letrasMinusculas = /[a-z]/; 
     let numeros = /[0-9]/;
@@ -59,26 +56,42 @@ const Login: React.FC = () => {
     let auxEspecial = 0;
 
     let i = 0;
+  
+    while(i < senha.value.length){
+        if(letrasMaiusculas.test(senha.value[i]))
+          auxMaiuscula++;
+        
+        else if(letrasMinusculas.test(senha.value[i]))
+          auxMinuscula++;
+
+        else if(numeros.test(senha.value[i]))
+          auxNumero++;
+
+        else if(caracteresEspeciais.test(senha.value[i]))
+          auxEspecial++;
+
+        i++;
+    }
+
+    if (!senha.value){
+      setIsPasswordReady(false)
+      alert('Escreva uma senha!')
+
+    } else if (auxMaiuscula && auxMinuscula && auxNumero && auxEspecial) {
+      setIsPasswordReady(true)
+
+    } else if(!auxMaiuscula || !auxMinuscula) {
+      setIsPasswordReady(false)
+      alert('Senha deve conter letras maiúsculas e minúsculas!')
+
+    } else if(!auxNumero || !auxEspecial){
+      setIsPasswordReady(false)
+      alert('Senha deve conter números e caracteres especiais!')
+    }
     
-    while(i < senha.length){
-        if(letrasMaiusculas.test(senha[i]))
-            auxMaiuscula++;
+    redirectToHome()
 
-        else if(letrasMinusculas.test(senha[i]))
-            auxMinuscula++;
-
-        else if(numeros.test(senha[i]))
-            auxNumero++;
-
-        else if(caracteresEspeciais.test(senha[i]))
-            auxEspecial++;
-         i++;
-    }
-
-    if (auxMaiuscula && auxMinuscula && auxNumero && auxEspecial){
-        setIsPasswordReady(true)
-    }
-  };
+  }
 
   return (
     <div className="login-container">
@@ -91,21 +104,19 @@ const Login: React.FC = () => {
         <div className="form">
           <InputForm
             typeInput="text"
-            className="form-control"
+            className="form-control field-login"
             required={false}
             description="Digite seu login"
             isLabel
             label="Login"
-            onChange={(e) => handleOnChangeLogin(e)}
           />
           <InputForm
             typeInput="password"
-            className="form-control"
+            className="form-control field-password"
             required={false}
             description="Digite sua senha"
             isLabel
             label="Senha"
-            onChange={(e) => handleOnChangePassword(e)}
           />
         </div>
         <div className="buttonForm">
@@ -115,7 +126,7 @@ const Login: React.FC = () => {
             nome="Entrar"
             buttonWidth={440}
             buttonPosition={10}
-            onPressButton={redirectToHome}
+            onPressButton={(e) => handleClick(e)}
           />
         </div>
         <div className="containerButton">
