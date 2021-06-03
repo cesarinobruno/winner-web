@@ -26,23 +26,13 @@ const Login: React.FC = () => {
   
   const redirectToHome = () => {
     if(isLoginReady && isPasswordReady){
-      console.log("cheguei aqui")
       navigate("/home");
     }
   };
   
-/*
-  useEffect(() => {
-    if(isLoginReady && isPasswordReady){
-      console.log('cheguei aqui')
-    }
-  }, [isLoginReady, isPasswordReady])
-*/
-
   const handleOnChangeLogin = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     const login = e.target.value
-    console.log(login)
 
     if(login.length === 0){
         setIsLoginReady(false);
@@ -82,25 +72,12 @@ const Login: React.FC = () => {
 
         else if(caracteresEspeciais.test(senha[i]))
             auxEspecial++;
-        
-        console.log(auxMaiuscula, auxMinuscula, auxNumero, auxEspecial)
          i++;
     }
 
     if (auxMaiuscula && auxMinuscula && auxNumero && auxEspecial){
         setIsPasswordReady(true)
     }
-  };
-
-  const teste = () => {
-    api
-      .get("httpbin.org/get")
-      .then((r) => {
-        console.log('resposta', r.data)
-      })
-      .catch((err) => {
-        console.log("error", err);
-      });
   };
 
   return (

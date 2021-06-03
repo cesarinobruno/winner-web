@@ -19,30 +19,6 @@ const Home: React.FC = () => {
   //   }
   // };
 
-  // const OpenGeolocation = () => {
-  //   console.log("abrir Geolocalização");
-  // };
-
-  //PARA ficar de cola
-  // const data = [
-  //   {
-  //     x: [
-  //       "Centro",
-  //       "Rocinha",
-  //       "Lins",
-  //       "Penha",
-  //       "Tijuca",
-  //       "Madureira",
-  //       "Barra da Tijuca",
-  //       "Bangu",
-  //       "Campo Grande",
-  //       "Santa Cruz",
-  //     ],
-  //     y: [900, 1020, 890, 875, 695, 389, 835, 821, 978, 756],
-  //     type: "bar",
-  //   },
-  // ];
-  // Plotly.newPlot('grafico', data);
   const districtUpas = [
     {
       title: "Centro",
