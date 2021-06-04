@@ -1,9 +1,6 @@
 import React, { useState } from "react";
 import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import "./style.css";
-import Edit from '@material-ui/icons/Edit';
-
-
 interface ButtonProps {
     isActive: boolean;
     onPressButton: Function;
